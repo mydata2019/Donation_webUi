@@ -1,9 +1,9 @@
 
 $(document).ready(function () {
-	var url = document.URL;
+	// var url = document.URL;
 	//	parseURL(url);
 	// var userId = document.getElementById("userId").value;
-  var userId = '2';
+  var userId =  document.getElementById("userId").value;
 	selectStatistics(userId);
 });
 
