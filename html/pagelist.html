@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+	<title>SK C&C MVNO</title>
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+	<meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	<meta HTTP-EQUIV="Expires" CONTENT="-1">
+	<link rel="stylesheet" href="../css/common.css">
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+	<style type="text/css">
+		#lwrap {}
+		.r {padding:20px 0 0 0;}
+		.r:first-child {padding-top:0;}
+		.r a {height:20px;text-decoration:underline;}
+		.d1 {padding:15px 0 15px 5px;font-weight:bold;line-height:22px;}
+		.d1 a{font-size:18px;}
+		.d2 {padding:10px 0 10px 20px; font-weight:normal;}
+		.d2 a {font-size:18px;text-decoration:underline;}
+		.nodis {display:none;}
+		.d1 ul li:nth-child(odd) {background:#f2f2f2;}
+
+		.processing { display:inline-block;height:20px;margin-left:10px !important;padding:0 4px;background-color:#f05b95;line-height:20px;border-radius:3px;color:#fff;font-size:14px;vertical-align:top; }
+		.processing.end {background-color:#3292be;}
+		.processing.comment {background-color:#ff9900;}
+		.processing.attention {margin:0;background-color:red;text-indent:0;}
+	</style>
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+
+		var $depth = $("#lwrap ul li").children("ul");
+		$depth.hide();
+		$("#lwrap ul li").children("a").on("click", function (e) {
+			if ($(this).next("ul").css("display") == "none")
+			{
+				$depth.hide();
+				$(this).next("ul").show();
+			} else {
+				$(this).next("ul").hide();
+			}
+		});
+
+	});
+	</script>
+</head>
+
+<body>
+
+<div id="lwrap">
+	<ul style="padding:10px">
+		<li class="d1"><a href="javascript:;">서비스 조회</a>
+			<ul>
+				<li class="d2"><a target="_blank" href="demo1.html">서비스 조회(입력전)</a></li>
+				<li class="d2"><a target="_blank" href="demo1.html?ty1">서비스 조회(입력후)</a></li>
+				<li class="d2"><a target="_blank" href="demo2_1.html">서비스 조회 결과(SK7mobile)</a></li>
+				<li class="d2"><a target="_blank" href="demo2_2.html">서비스 조회 결과(Mobing)</a></li>
+			</ul>
+		</li>
+		
+		<li class="d1"><a href="javascript:;">잔액조회</a>
+			<ul>
+				<li class="d2"><a target="_blank" href="demo3_1.html">잔액조회(SK7mobile)</a></li>
+				<li class="d2"><a target="_blank" href="demo3_2.html">잔액조회(Mobing)</a></li>
+			</ul>
+		</li>
+
+		<li class="d1"><a href="javascript:;">충전하기</a>
+			<ul>
+				<li class="d2"><a target="_blank" href="demo4_1.html">충전하기(SK7mobile)</a></li>
+				<li class="d2"><a target="_blank" href="demo4_2.html">충전하기(Mobing)</a></li>
+				<li class="d2"><a target="_blank" href="demo5_1.html">충전결과(SK7mobile)</a></li>
+				<li class="d2"><a target="_blank" href="demo5_2.html">충전결과(Mobing)</a></li>
+				<li class="d2"><a target="_blank" href="demo6_1.html">충전내역(SK7mobile)</a></li>
+				<li class="d2"><a target="_blank" href="demo6_2.html">충전내역(Mobing)</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+</body>
+</html>
