@@ -74,6 +74,10 @@ jQuery(function() {
             $('.chargeList li .dataList').slideUp();
             $(this).parent('li').addClass('on');
             $(this).siblings('.dataList').slideDown();
+            console.log("ui   ");
+            $('html,body').animate({
+              scrollTop: $('.chargeList li .dataList li').offset().top
+            }, 500);
         }else{
             $(this).parent('li').removeClass('on');
             $(this).siblings('.dataList').slideUp();
