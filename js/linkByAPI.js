@@ -59,6 +59,7 @@ $(document).ready(function () {
   	      success: function (result) {
             document.getElementById('id01').style.display='none';
             document.getElementById('id02').style.display='block';
+            document.getElementById('id03').style.display='none';
   	      }
   	    });
 
