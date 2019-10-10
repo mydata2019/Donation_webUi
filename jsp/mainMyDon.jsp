@@ -51,6 +51,23 @@
     .navi a.social{position:relative;top:0;left:0;width:33%;height:49px;background:url(../images/don_social.png) no-repeat;background-size:45px 42px; background-position:center; padding:0px 10px; display:table-cell; }
     .navi a.donation{position:relative;top:0;left:0;width:33%;height:49px;background:url(../images/don_donation.png) no-repeat;background-size:40px 40px; background-position:center; padding:0px 10px; display:table-cell; }
 
+    .downbtn {
+      background-color: transparent;
+      border: none;
+      color: #646464;
+      padding: 12px 30px;
+      padding-left: 10px;
+      margin-left: 0px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    /* Darker background on mouse-over */
+    .downbtn:hover {
+      color: #222222;
+      font-weight:200px;
+    }
+
   </style>
 </head>
 
@@ -111,7 +128,7 @@
   <div class="w3-container w3-light-grey w3-padding-16" style="overflow:auto; overflow-x:hidden; scroll-behavior: smooth;">
     <!-- header -->
     <header class="fixed" style="margin-top:0px; ">
-        <h1 style="margin: 0 0 0 15px; ">기부내역</h1>
+        <h1 style="margin: 0 0 0 15px; ">기부내역 <button class="downbtn" onclick="downloadHst();"><i class="fa fa-download"></i> Down</button></h1>
     </header>
     <!-- container -->
     <div id="container" style="padding-top:0px; margin-top: 0px">
