@@ -4,6 +4,7 @@ var pntbamt;
 var userNm;
 var totalAmt = 0;
 var subtotalAmt = 0;
+var array = [];
 
 $(document).ready(function(){
 
@@ -73,7 +74,7 @@ function selectMainInfo(userId){
 
               totalAmt = totalAmt+Number(row['don_amt'].replace(",", ""));
               donDtDtl.push( row['don_dt']);
-              donAmtDtl.push( row['don_amt']);
+              donAmtDtl.push( row['don_amt'].replace(",", ""));
               donCttDtl.push( row['don_ctt']);
               regNmDtl.push( row['regu_nm']);
 
@@ -85,11 +86,15 @@ function selectMainInfo(userId){
 
           });
 
-          console.log('cnt  '+cnt);
-
           var liStr = "";
           for (var k=0; k<cnt; k++ ){
+            //화면
             liStr = liStr+'<li><span>'+donDtDtl[k].substr(0,4)+'-'+donDtDtl[k].substr(4,2)+'-'+donDtDtl[k].substr(6,2)+'</span></li><li><span>'+regNmDtl[k]+' ( '+donCttDtl[k]+' )</span></li><li style="border-bottom:1px solid #d9d9d9"><span>'+donAmtDtl[k]+'원</span></li>';
+            //다운로드
+            array.push({Donation_Organization:orgNm, Donation_TotalAmt:subtotalAmt.replace(",", ""),
+                        Donation_Date:donDtDtl[k].substr(0,4)+'-'+donDtDtl[k].substr(4,2)+'-'+donDtDtl[k].substr(6,2),
+                        Donation_Regular:regNmDtl[k], Donation_Reason:donCttDtl[k],
+                        Donation_Amt:donAmtDtl[k]});
           }
 
           $('#container .chargeList ').append('\
@@ -101,7 +106,7 @@ function selectMainInfo(userId){
               </li>');
 
         }); //end of spc
-3
+
         //총 기부금액
         viewTotalAmt(totalAmt);
 
@@ -129,19 +134,28 @@ function viewTotalAmt(totalAmt){
 
 };
 
+//기부내역 다운로드
 function downloadHst() {
-  console.log('downloadHst');
-  downloadInnerHtml('#container', true, 'mydonationhistory', 'application/csv', '.csv');
-};
 
-// csv/txt 다운로드
-function downloadInnerHtml(elementid, htmllinereplace, filename, mimeType, extension) {
+		var a = "기부단체, 총 기부금액, 기부일자, 정기후원여부, 상세사유, 기부금액\r\n";
+		$.each(array, function(i, item){
+			a += item.Donation_Organization + "," + item.Donation_TotalAmt + "," +
+           item.Donation_Date + "," + item.Donation_Regular +","+
+           item.Donation_Reason + "," + item.Donation_Amt+"\r\n";
+		});
 
-  var elHtml = $(elementid).html();
-  if (htmllinereplace) elHtml = elHtml.replace(/\<br\>/gi,'\n');
-  var link = document.createElement('a');
-  link.setAttribute('download', filename + extension);
-  link.setAttribute('href', 'data:' + mimeType  +  ';charset=utf-8,' + encodeURIComponent(elHtml));
-  link.click();
+		// jquery 사용하지 않는 경우
+		/* for(var i=0; i<array.length; i++){
+			a += array[i].name + "," + array[i].age + "," + array[i].test + "\r\n";
+		} */
+    console.log('before making link a >>>'+a);
+		var downloadLink = document.createElement("a");
+		var blob = new Blob(["\ufeff"+a], { type: "text/csv;charset=utf-8" });
+		var url = URL.createObjectURL(blob);
+		downloadLink.href = url;
+		downloadLink.download = "data.csv";
 
+		document.body.appendChild(downloadLink);
+		downloadLink.click();
+		document.body.removeChild(downloadLink);
 };

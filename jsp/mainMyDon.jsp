@@ -130,19 +130,9 @@
   </div>
 
   <div class="w3-container w3-white w3-padding-16" style="overflow:auto; overflow-x:hidden; scroll-behavior: smooth; margin-bottom:100px">
-    <!-- header -->
-<<<<<<< HEAD
-    <header class="fixed" style="margin-top:0px; ">
-        <h1 style="margin: 0 0 0 15px; ">기부내역 <button class="downbtn" onclick="downloadHst();"><i class="fa fa-download"></i> Down</button></h1>
-    </header>
-=======
-    <%-- <header class="fixed" style="margin-top:0px; ">
-        <h1 style="margin: 0 0 0 15px; "><b>기부내역</b></h1>
-    </header> --%>
-    <a class="w3-bar-item" style="color:#646464; font-size:16px; margin-left: 0px; padding-left: 0px"><b>기부내역</b></a>
-  <%-- <header class="fixed" style="margin-top:0px; "> --%>
 
->>>>>>> 4064e177d1a0ec2d96fc45c18bad79bedaf590d2
+    <!-- header -->
+    <a class="w3-bar-item" style="color:#646464; font-size:16px; margin-left: 0px; padding-left: 0px"><b>기부내역</b><button class="downbtn" onclick="downloadHst();"><i class="fa fa-download"></i> Down</button></a>
     <!-- container -->
     <div id="container" style="padding-top:0px; margin-top: 0px; margin-left: -30px; margin-right: -15px">
         <ul class="chargeList">
