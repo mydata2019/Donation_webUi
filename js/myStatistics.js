@@ -1,4 +1,4 @@
-
+var userNm;
 var userId;
 
 $(document).ready(function () {
@@ -6,8 +6,46 @@ $(document).ready(function () {
 	//	parseURL(url);
 	// var userId = document.getElementById("userId").value;
   userId =  document.getElementById("userId").value;
+  selectMainInfo(userId);
 	selectStatistics(userId);
+
+  //사용자명 맵핑
+  document.getElementById("userNmSide").innerHTML=userNm;
 });
+
+
+// 사용자 정보
+function selectMainInfo(userId){
+	console.log("userId > "+JSON.stringify(userId));
+
+	$.ajax({
+			url: 'http://'+ip+':8089/history/selectMain',
+			type: 'POST',
+			data: userId,
+			contentType: "application/json; charset=utf-8",
+			dataType: "json",
+			async: false,
+			success: function (data) {
+
+				data = JSON.stringify(data);
+				data = JSON.parse(data);
+
+        //기부내역 명세
+        data["hstResultSpc"].forEach(function (rowSpc, i) {
+          userNm = rowSpc['user_nm'];             //사용자명
+					document.getElementById("userNmSide").innerHTML=userNm;
+
+        }); //end of spc
+
+			},
+			error: function (data){
+				console.log("통신Error OR 없는 고객");
+			}
+		});
+
+		return false;
+
+};
 
 //select My Statistics
 function selectStatistics(userId){
@@ -41,10 +79,16 @@ function selectStatistics(userId){
 
 }
 
-function to_back(){
-  console.log("back");
-  location.href="./mainMyDon.jsp?userId="+userId;
-}
+// function to_back(){
+//   console.log("back");
+//   location.href="./mainMyDon.jsp?userId="+userId;
+// }
+
+//페이지 이동
+function layerOpen(id) {
+    console.log("id is "+id);
+    location.href="./"+id+".jsp?userId="+userId;
+};
 
 function drawStatistics(result){
 	// am4core.ready(function() {

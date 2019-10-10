@@ -21,7 +21,7 @@
 
 
   <style>
-  html,body,h1,h2,h3,h4,h5,h6 {font-family: "Jua", sans-serif}
+  html,body,h1,h2,h3,h4,h5,h6 {font-family: "", sans-serif}
   .md-background {
     background-color : #5BB4F0;
     color : white;
@@ -43,9 +43,9 @@
   .blind{overflow:hidden;position:absolute;top:-9999em;left:-9999em;width:0;height:0;font-size:0;text-indent:-9999em}
 
   .navi{position:fixed;height:50px; width:100%; z-index:100;bottom:0px; background-color:#5BB4F0;display:table;}
-  .navi a.myDomain{position:relative;top:0;left:0;width:33%;height:49px;background:url(../images/don_mydon.png) no-repeat;background-size:40px 38px; background-position:center; padding:0px 10px; display:table-cell; }
-  .navi a.social{position:relative;top:0;left:0;width:33%;height:49px;background:url(../images/don_social.png) no-repeat;background-size:45px 42px; background-position:center; padding:0px 10px; display:table-cell; }
-  .navi a.donation{position:relative;top:0;left:0;width:33%;height:49px;background:url(../images/don_donation.png) no-repeat;background-size:40px 40px; background-position:center; padding:0px 10px; display:table-cell; }
+  .navi a.myDomain{position:relative;top:0;left:0;width:33%;height:49px;background:url(../images/don_mydon2.png) no-repeat;background-size:40px 38px; background-position:center; padding:0px 10px; display:table-cell; }
+  .navi a.myStatistics{position:relative;top:0;left:0;width:33%;height:49px;background:url(../images/don_mystatistics.png) no-repeat;background-size:40px 40px; background-position:center; padding:0px 10px; display:table-cell; }
+  .navi a.social{position:relative;top:0;left:0;width:33%;height:49px;background:url(../images/don_social2.png) no-repeat;background-size:45px 42px; background-position:center; padding:0px 10px; display:table-cell; }
 
 
   </style>
@@ -58,7 +58,8 @@
     <%-- <button class="w3-bar-item w3-button w3-hide-large w3-hover-none" onclick="to_back();"><i class="fa fa-arrow-left"></i></button> --%>
   <div class="w3-bar w3-top w3-large md-background" style="z-index:4">
     <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" style="background-color:#5BB4F0;" onclick="w3_open();"><i class="fa fa-bars" style="color:#ffffff"></i></button>
-    <span class="w3-bar-item w3-left" style="margin-left:-10px"><b>MY 기부통계 내역</b></span>
+    <%-- <span class="w3-bar-item w3-left" style="margin-left:-10px"><b>MY 기부통계 내역</b></span> --%>
+    <span class="w3-bar-item w3-button w3-left w3-hover-none w3-hover-text-white" style="margin-left:-10px" onclick="layerOpen('myStatistics')"><b>MY 기부통계 내역</b></span>
     <input type="image" src="../images/don_alert.png" alt="Submit" width="42" height="42" align="right">
   </div>
 
@@ -74,7 +75,7 @@
     <%-- 작성 --%>
     </div>
     <div class="w3-bar-block">
-      <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-refresh"></i>  연동관리</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding" onclick="layerOpen('linkMain')"><i class="fa fa-refresh"></i>  연동관리</a>
       <%-- <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-dashboard fa-fw"></i>  My 기부내역 통계</a> --%>
       <hr>
       <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  설정</a>
@@ -90,7 +91,7 @@
   <div class="w3-main" style="margin-left:300px; margin-top:43px; margin-bottom:100px">
 
     <!-- Header -->
-    <header class="w3-container" style="padding-top:10px">
+    <header class="w3-container" style="padding-top:10px; margin-top:44px">
       <h6><b> 2019년 총 기부내역 </b> <span class="w3-right"> <span id="totalAmtdiv" style="color:blue"> </span> 원</span> </h6>
       <%-- <hr> --%>
     </header>
@@ -113,9 +114,11 @@
 
     <!-- Footer -->
     <div class="navi">
-      <a href="./demo1.jsp" class="myDomain"><span class="blind">MY기부</span></a>
-      <a href="./demo2_1.jsp" class="social"><span class="blind">소셜벤처</span></a>
-      <a href="./demo4_M00030.jsp" class="donation"><span class="blind">기부단체</span></a>
+      <a href="javascript:;" class="myDomain w3-button w3-hover-blue" onclick="layerOpen('mainMyDon')"><span class="blind">MY기부</span></a>
+      <a href="#" class="myStatistics w3-button w3-hover-blue"><span class="blind">MY기부내역통계</span></a>
+      <a href="javascript:;" class="social w3-button w3-hover-blue" onclick="layerOpen('socialValue')"><span class="blind">사회적가치 PLUS+</span></a>
+
+      <%-- <a href="javascript:;" class="donation" onclick="layerOpen('donation')"><span class="blind">기부단체 정보</span></a> --%>
     </div>
 
 </div>
