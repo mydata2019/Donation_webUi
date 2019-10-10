@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jua">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <input type="hidden" id="userId" name="userId" value=${param.userId} />
@@ -22,7 +22,7 @@
 
   <style>
 
-  html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+  html,body,h1,h2,h3,h4,h5 {font-family: "", sans-serif}
 
   .md-background2 {
     background-color : #E0E0E0;
@@ -67,7 +67,7 @@
 <!-- Top container -->
 <div class="w3-bar w3-top w3-large md-background2" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none" onclick="to_back();"><i class="fa fa-arrow-left"></i></button>
-  <span class="w3-bar-item w3-left">연동 관리</span>
+  <span class="w3-bar-item w3-left" style="margin-left:-10px"><b>연동 관리</b></span>
 </div>
 
 
@@ -77,7 +77,7 @@
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
   <div class="w3-container w3-border w3-large w3-light-grey">
-    <div class="w3-left-align"><p>기관별 기부내역(상세) 연동</p></div>
+    <div class="w3-left-align" style="font-size:16px;"><p>기관별 기부내역(상세) 연동</p></div>
   </div>
   <div class="w3-container w3-white" id="org" style="padding-top:10px;padding-bottom:20px;">
     <div class="w3-left-align top-row">
@@ -118,7 +118,7 @@
     </div>
   </div>
   <div class="w3-container w3-border w3-large w3-light-grey">
-    <div class="w3-left-align"><p>기부이력 직접 등록</p></div>
+    <div class="w3-left-align" style="font-size:16px;"><p>기부이력 직접 등록</p></div>
   </div>
   <div class="w3-container w3-white top-row" style="padding-top:10px;">
     <div class="w3-left-align pull-left" style="padding-top:10px;">

@@ -43,31 +43,15 @@
     .chargeList > li.on > a:after{margin-top:-5px;transform: rotate( 135deg )}
     .chargeList .dataList{list-style:none; display:none;padding:20px;background:#ffffff; color:#646464; padding-left:30px; border-radius:10px; margin-left: 20px; margin-right:40px}
 
-    #pntInfo{width:100%; height:auto; font-size: 18px; text-align: center; margin: -30px 0px 0px 0px}
+    #pntInfo{width:100%; height:auto; font-size: 18px; text-align: center; margin: -40px 0px 0px 0px}
     #totalAamt{width:100%; height:auto;font-size: 45px; text-align: center; margin: 0px 0px 8px 0px}
 
     .navi{position:fixed;height:50px; width:100%; z-index:100;bottom:0px; background-color:#5BB4F0;display:table;}
-    .navi a.myDomain{position:relative;top:0;left:0;width:33%;height:49px;background:url(../images/don_mydon.png) no-repeat;background-size:40px 38px; background-position:center; padding:0px 10px; display:table-cell; }
-    .navi a.myStatistics{position:relative;top:0;left:0;width:33%;height:49px;background:url(../images/don_mystatistics2.png) no-repeat;background-size:40px 40px; background-position:center; padding:0px 10px; display:table-cell; }
-    .navi a.social{position:relative;top:0;left:0;width:33%;height:49px;background:url(../images/don_social2.png) no-repeat;background-size:45px 42px; background-position:center; padding:0px 10px; display:table-cell; }
+    .navi a.myDomain{position:relative;top:0;left:0;width:25%;height:49px;background:url(../images/don_mydon.png) no-repeat;background-size:47px 45px; background-position:center; padding:0px 10px; display:table-cell; }
+    .navi a.myStatistics{position:relative;top:0;left:0;width:25%;height:49px;background:url(../images/don_mystatistics2.png) no-repeat;background-size:50px 43px; background-position:center; padding:0px 10px; display:table-cell; }
+    .navi a.notiInfo{position:relative;top:0;left:0;width:25%;height:49px;background:url(../images/don_notiInfo2.png) no-repeat;background-size:42px 40px; background-position:center; padding:0px 10px; display:table-cell; }
+    .navi a.social{position:relative;top:0;left:0;width:25%;height:49px;background:url(../images/don_social2.png) no-repeat;background-size:45px 40px; background-position:center; padding:0px 10px; display:table-cell; }
 
-
-    .downbtn {
-      background-color: transparent;
-      border: none;
-      color: #646464;
-      padding: 12px 30px;
-      padding-left: 10px;
-      margin-left: 0px;
-      cursor: pointer;
-      font-size: 15px;
-    }
-
-    /* Darker background on mouse-over */
-    .downbtn:hover {
-      color: #222222;
-      font-weight:200px;
-    }
 
   </style>
 </head>
@@ -114,7 +98,7 @@
   </header>
 
   <div class="w3-container w3-padding-16 md-background" style="height:100px">
-    <p id="pntInfo"><span id="userNm"></span>님의 총 기부금 </p>
+    <p id="pntInfo"><b> <span id="userNm"></span> 님의 총 기부금 </b></p>
     <p id="totalAamt">0</p>
   </div>
 
@@ -130,9 +114,11 @@
   </div>
 
   <div class="w3-container w3-white w3-padding-16" style="overflow:auto; overflow-x:hidden; scroll-behavior: smooth; margin-bottom:100px">
-
     <!-- header -->
-    <a class="w3-bar-item" style="color:#646464; font-size:16px; margin-left: 0px; padding-left: 0px"><b>기부내역</b><button class="downbtn" onclick="downloadHst();"><i class="fa fa-download"></i> Down</button></a>
+    <%-- <a class="w3-bar-item" style="color:#646464; font-size:16px; margin-left: 0px; padding-left: 0px"><b>기부내역</b></a> --%>
+<a class="w3-bar-item" style="color:#646464; font-size:16px; margin-left: 0px; padding-left: 0px"><b>기부내역</b><button class="downbtn" onclick="downloadHst();"><i class="fa fa-download"></i> Down</button></a>
+  <%-- <header class="fixed" style="margin-top:0px; "> --%>
+
     <!-- container -->
     <div id="container" style="padding-top:0px; margin-top: 0px; margin-left: -30px; margin-right: -15px">
         <ul class="chargeList">
@@ -175,8 +161,12 @@
   <div class="navi">
     <a href="#" class="myDomain w3-button w3-hover-blue"><span class="blind">MY기부</span></a>
     <a href="javascript:;" class="myStatistics w3-button w3-hover-blue" onclick="layerOpen('myStatistics')"><span class="blind">MY기부내역통계</span></a>
+    <a href="javascript:;" class="notiInfo w3-button w3-hover-blue" onclick="layerOpen('notiInformation')"><span class="blind">기부단체 연차보고서</span></a>
     <a href="javascript:;" class="social w3-button w3-hover-blue" onclick="layerOpen('socialValue')"><span class="blind">사회적가치 PLUS+</span></a>
     <%-- <a href="javascript:;" class="donation" onclick="layerOpen('donation')"><span class="blind">기부단체 정보</span></a> --%>
+
+
+
   </div>
 
   <!-- End page content -->

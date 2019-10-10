@@ -43,9 +43,10 @@
   .blind{overflow:hidden;position:absolute;top:-9999em;left:-9999em;width:0;height:0;font-size:0;text-indent:-9999em}
 
   .navi{position:fixed;height:50px; width:100%; z-index:100;bottom:0px; background-color:#5BB4F0;display:table;}
-  .navi a.myDomain{position:relative;top:0;left:0;width:33%;height:49px;background:url(../images/don_mydon2.png) no-repeat;background-size:40px 38px; background-position:center; padding:0px 10px; display:table-cell; }
-  .navi a.myStatistics{position:relative;top:0;left:0;width:33%;height:49px;background:url(../images/don_mystatistics.png) no-repeat;background-size:40px 40px; background-position:center; padding:0px 10px; display:table-cell; }
-  .navi a.social{position:relative;top:0;left:0;width:33%;height:49px;background:url(../images/don_social2.png) no-repeat;background-size:45px 42px; background-position:center; padding:0px 10px; display:table-cell; }
+  .navi a.myDomain{position:relative;top:0;left:0;width:25%;height:49px;background:url(../images/don_mydon2.png) no-repeat;background-size:47px 45px; background-position:center; padding:0px 10px; display:table-cell; }
+  .navi a.myStatistics{position:relative;top:0;left:0;width:25%;height:49px;background:url(../images/don_mystatistics.png) no-repeat;background-size:50px 43px; background-position:center; padding:0px 10px; display:table-cell; }
+  .navi a.notiInfo{position:relative;top:0;left:0;width:25%;height:49px;background:url(../images/don_notiInfo2.png) no-repeat;background-size:42px 40px; background-position:center; padding:0px 10px; display:table-cell; }
+  .navi a.social{position:relative;top:0;left:0;width:25%;height:49px;background:url(../images/don_social2.png) no-repeat;background-size:45px 40px; background-position:center; padding:0px 10px; display:table-cell; }
 
 
   </style>
@@ -92,21 +93,21 @@
 
     <!-- Header -->
     <header class="w3-container" style="padding-top:10px; margin-top:44px">
-      <h6><b> 2019년 총 기부내역 </b> <span class="w3-right"> <span id="totalAmtdiv" style="color:blue"> </span> 원</span> </h6>
+      <h6 style="color:#646464; font-size: 16px;"><b> 2019년 총 기부내역 </b> <span class="w3-right"> <span id="totalAmtdiv" style="color:blue"> </span> 원</span> </h6>
       <%-- <hr> --%>
     </header>
 
     <hr>
     <!-- Header -->
     <header class="w3-container" style="padding-top:10px">
-      <h6><b> 월별 기부내역</b></h6>
+      <h6 style="color:#646464; font-size: 16px;"><b> 월별 기부내역</b></h6>
       <%-- <hr> --%>
     </header>
     <div id="columnChartdiv"></div>
     <hr>
     <!-- Header -->
     <header class="w3-container">
-      <h6><b> 분야별 기부내역 (원)</b></h6>
+      <h6 style="color:#646464; font-size: 16px;"><b> 분야별 기부내역 (원)</b></h6>
       <%-- <hr> --%>
     </header>
     <div id="pieChartdiv"></div>
@@ -116,6 +117,7 @@
     <div class="navi">
       <a href="javascript:;" class="myDomain w3-button w3-hover-blue" onclick="layerOpen('mainMyDon')"><span class="blind">MY기부</span></a>
       <a href="#" class="myStatistics w3-button w3-hover-blue"><span class="blind">MY기부내역통계</span></a>
+      <a href="javascript:;" class="notiInfo w3-button w3-hover-blue" onclick="layerOpen('notiInformation')"><span class="blind">기부단체 연차보고서</span></a>
       <a href="javascript:;" class="social w3-button w3-hover-blue" onclick="layerOpen('socialValue')"><span class="blind">사회적가치 PLUS+</span></a>
 
       <%-- <a href="javascript:;" class="donation" onclick="layerOpen('donation')"><span class="blind">기부단체 정보</span></a> --%>
