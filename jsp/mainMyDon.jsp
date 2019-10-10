@@ -52,6 +52,21 @@
     .navi a.notiInfo{position:relative;top:0;left:0;width:25%;height:49px;background:url(../images/don_notiInfo2.png) no-repeat;background-size:42px 40px; background-position:center; padding:0px 10px; display:table-cell; }
     .navi a.social{position:relative;top:0;left:0;width:25%;height:49px;background:url(../images/don_social2.png) no-repeat;background-size:45px 40px; background-position:center; padding:0px 10px; display:table-cell; }
 
+    .downbtn {
+      background-color: transparent;
+      border: none;
+      color: #646464;
+      padding: 12px 30px;
+      padding-left: 10px;
+      margin-left: 0px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    /* Darker background on mouse-over */
+    .downbtn:hover {
+      color: #222222;
+      font-weight:200px;
+    }
 
   </style>
 </head>
@@ -116,7 +131,7 @@
   <div class="w3-container w3-white w3-padding-16" style="overflow:auto; overflow-x:hidden; scroll-behavior: smooth; margin-bottom:100px">
     <!-- header -->
     <%-- <a class="w3-bar-item" style="color:#646464; font-size:16px; margin-left: 0px; padding-left: 0px"><b>기부내역</b></a> --%>
-<a class="w3-bar-item" style="color:#646464; font-size:16px; margin-left: 0px; padding-left: 0px"><b>기부내역</b><button class="downbtn" onclick="downloadHst();"><i class="fa fa-download"></i> Down</button></a>
+  <a class="w3-bar-item" style="color:#646464; font-size:16px; margin-left: 0px; padding-left: 0px"><b>기부내역</b><button class="downbtn" onclick="downloadHst();"><i class="fa fa-download"></i> Down</button></a>
   <%-- <header class="fixed" style="margin-top:0px; "> --%>
 
     <!-- container -->
