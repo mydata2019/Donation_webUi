@@ -15,13 +15,20 @@ $(document).ready(function(){
 
     //Main정보 조회
     selectMainInfo(userId);
-    
+
     //사용자명 맵핑
     document.getElementById("userNm").innerHTML=userNm;
     document.getElementById("userNmSide").innerHTML=userNm;
   }
 
 });
+
+//페이지 이동
+function layerOpen(id) {
+    console.log("id is "+id);
+    location.href="./"+id+".jsp?userId="+userId;
+};
+
 
 //기부내역 & 포인트 잔액 조회
 function selectMainInfo(userId){

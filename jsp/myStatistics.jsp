@@ -10,12 +10,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <input type="hidden" id="userId" name="userId" value=${param.userId} />
+
   <!-- Resources -->
   <script src="https://www.amcharts.com/lib/4/core.js"></script>
   <script src="https://www.amcharts.com/lib/4/charts.js"></script>
   <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-  <input type="hidden" id="userId" name="userId" value=${param.userId} />
   <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/ip_config.js"></script>
   <script type="text/javascript" src="../js/myStatistics.js"></script>
 
 

@@ -1,9 +1,11 @@
 
+var userId;
+
 $(document).ready(function () {
 	// var url = document.URL;
 	//	parseURL(url);
 	// var userId = document.getElementById("userId").value;
-  var userId =  document.getElementById("userId").value;
+  userId =  document.getElementById("userId").value;
 	selectStatistics(userId);
 });
 
@@ -16,11 +18,7 @@ function selectStatistics(userId){
 	// var data = userId;
 
 	$.ajax({
-		//url: 'http://localhost:8083/charging/selectHst',
-		//url: 'http://localhost:8000/core/charging/selectHst',	//local
-		//url: 'http://a75b30f27972711e9a5260241e1ca044-1071553545.ap-northeast-2.elb.amazonaws.com:8000/core/charging/selectHst',
-		// url: 'http://a819dbefea6d111e9a5260241e1ca044-2045704601.ap-northeast-2.elb.amazonaws.com:8000/core/charging/selectHst',
-		url: 'http://localhost:8090/statistics/selectStatistics',
+		url: 'http://'+ip+':8090/statistics/selectStatistics',
 		type: 'POST',
 		data: JSON.stringify(userId),
 		contentType: "application/json; charset=utf-8",
@@ -41,6 +39,11 @@ function selectStatistics(userId){
 
 	return true;
 
+}
+
+function to_back(){
+  console.log("back");
+  location.href="./mainMyDon.jsp?userId="+userId;
 }
 
 function drawStatistics(result){

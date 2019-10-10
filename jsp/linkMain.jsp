@@ -10,10 +10,15 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <input type="hidden" id="userId" name="userId" value=${param.userId} />
+
   <!-- Resources -->
   <script src="https://www.amcharts.com/lib/4/core.js"></script>
   <script src="https://www.amcharts.com/lib/4/charts.js"></script>
   <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+  <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/ip_config.js"></script>
+  <script type="text/javascript" src="../js/linkMain.js"></script>
 
   <style>
 
@@ -61,7 +66,7 @@
 
 <!-- Top container -->
 <div class="w3-bar w3-top w3-large md-background2" style="z-index:4">
-  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none" onclick="w3_open();"><i class="fa fa-arrow-left"></i></button>
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none" onclick="to_back();"><i class="fa fa-arrow-left"></i></button>
   <span class="w3-bar-item w3-left">연동 관리</span>
 </div>
 
@@ -89,7 +94,7 @@
         <img src="../images/org2.png" class="logo"/>유니세프
       </span>
       <span class="row-right pull-right">
-        <button class="w3-btn w3-round pull-right" id="callAPI" onclick="location.href='./linkByAPI.jsp?user_id=1&org_id=1'">
+        <button class="w3-btn w3-round pull-right" id="callAPI" href="javascript:;" onclick="location.href='./linkByAPI.jsp?user_id=1&org_id=1'">
           <img src="../images/add.png" class="plusminus"/>연동하기</button>
       </span>
     </div>
@@ -120,7 +125,7 @@
       <span class="w3-padding-large">직접 등록하기</span>
     </div>
     <div class="pull-right">
-      <button class="w3-btn w3-white w3-round w3-right-align" id="callText" onclick="location.href='./linkByText.jsp'">
+      <button class="w3-btn w3-white w3-round w3-right-align" href="javascript:;" id="callText" onclick="layerOpen('linkByText')">
         <img src="../images/add.png" class="plusminus"/>입력하기
       </button>
     </div>

@@ -10,11 +10,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <input type="hidden" id="userId" name="userId" value=${param.userId} />
+
   <!-- Resources -->
   <script src="https://www.amcharts.com/lib/4/core.js"></script>
   <script src="https://www.amcharts.com/lib/4/charts.js"></script>
   <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/ip_config.js"></script>
   <script type="text/javascript" src="../js/linkByText.js"></script>
 
   <style>
@@ -41,7 +44,7 @@
 
 <!-- Top container -->
 <div class="w3-bar w3-top w3-large md-background2" style="z-index:4">
-  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none" onclick="w3_open();"><i class="fa fa-arrow-left"></i></button>
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none" onclick="to_back();"><i class="fa fa-arrow-left"></i></button>
   <span class="w3-bar-item w3-left">기부내역 등록하기</span>
 </div>
 
@@ -96,7 +99,7 @@
       <input type="button" class="w3-btn w3-bar-item w3-border-right w3-text-white"
         style="width:50%;padding-top:15px;padding-bottom:15px;margin-top:0px;background-color: #6bbcfd; font-weight:bold;"
          value="취소하기"
-        onclick="location.href='http://localhost:9090/Donation_webUi/jsp/linkMain.jsp'">
+        onclick="location.href='./linkMain.jsp'">
       <input type="submit" class="w3-btn w3-bar-item w3-text-white"
         style="float:right;width:50%;padding-top:15px;padding-bottom:15px;margin-top:0px;background-color: #008fff; font-weight:bold;"
          value="등록 요청"/>

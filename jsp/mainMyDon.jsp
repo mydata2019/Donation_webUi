@@ -74,8 +74,8 @@
     <%-- 작성 --%>
     </div>
     <div class="w3-bar-block">
-      <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  연동관리</a>
-      <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-dashboard fa-fw"></i>  My 기부내역 통계</a><hr>
+      <a href="javascript:;" class="w3-bar-item w3-button w3-padding" onclick="layerOpen('linkMain')"><i class="fa fa-users fa-fw"></i>  연동관리</a>
+      <a href="javascript:;" class="w3-bar-item w3-button w3-padding" onclick="layerOpen('myStatistics')"><i class="fa fa-dashboard fa-fw"></i>  My 기부내역 통계</a><hr>
       <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  설정</a>
       <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  고객센터</a>
     </div>
@@ -152,9 +152,9 @@
 
   <!-- Footer -->
   <div class="navi">
-    <a href="./demo1.jsp" class="myDomain"><span class="blind">MY기부</span></a>
-    <a href="./demo2_1.jsp" class="social"><span class="blind">소셜벤처</span></a>
-    <a href="./demo4_M00030.jsp" class="donation"><span class="blind">기부단체</span></a>
+    <a href="#" class="myDomain"><span class="blind">MY기부</span></a>
+    <a href="javascript:;" class="social" onclick="layerOpen('socialValue')"><span class="blind">사회적가치 PLUS+</span></a>
+    <a href="javascript:;" class="donation" onclick="layerOpen('donation')"><span class="blind">기부단체 정보</span></a>
   </div>
 
   <!-- End page content -->

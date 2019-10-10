@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+  console.log("present ip is "+ip);
+
   $("#data-form").submit(function (event) {
 	    // 폼 기본 제출 막기
 	    event.preventDefault();
@@ -13,7 +15,7 @@ $(document).ready(function () {
       // API 에 맞게 데이터를 조합하기
       var data = {id: id, pw: pw, user_id: user_id, org_id: org_id};
 
-	    var url = 'http://localhost:8081/Interface/Auth';
+	    var url = 'http://'+ip+':8081/Interface/Auth';
 	    // POST 로 데이터 보내기
 	    $.ajax({
 	      url: url,
@@ -44,7 +46,7 @@ $(document).ready(function () {
   	    // API 에 맞게 데이터를 조합하기
   	    var data = {id: id, user_id: user_id, org_id: org_id};
 
-  	    var url = 'http://localhost:8081/Interface/GetDonation';
+  	    var url = 'http://'+ip+':8081/Interface/GetDonation';
 
   	    // POST 로 데이터 보내기
   	    $.ajax({

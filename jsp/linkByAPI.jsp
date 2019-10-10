@@ -15,6 +15,7 @@
   <script src="https://www.amcharts.com/lib/4/charts.js"></script>
   <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/ip_config.js"></script>
   <script type="text/javascript" src="../js/linkByAPI.js"></script>
 
   <style>
@@ -86,7 +87,7 @@
           <input type="button" class="w3-btn w3-bar-item w3-border-right w3-text-white"
             style="width:50%;padding-top:15px;padding-bottom:15px;margin-top:0px;background-color: #6bbcfd; font-weight:bold;"
             value="취소하기"
-            onclick="location.href='http://localhost:9090/Donation_webUi/jsp/linkMain.jsp'">
+            onclick="location.href='./linkMain.jsp'">
           <input type="submit" class="w3-btn w3-bar-item w3-text-white"
             style="float:right;width:50%;padding-top:15px;padding-bottom:15px;margin-top:0px;background-color: #008fff; font-weight:bold;"
              value="로그인"/>
@@ -132,7 +133,7 @@
 
     <header class="w3-container w3-grey">
       <h3 class="w3-text-white" style="float:left;">연동 성공</h3>
-      <span onclick="location.href='http://localhost:9090/Donation_webUi/jsp/linkMain.jsp'"
+      <span onclick="location.href='./linkMain.jsp'"
       class="w3-button pull-right w3-text-white">X</span>
     </header>
 
@@ -141,7 +142,7 @@
       <p><b>기부포인트가 적립되었습니다.</b></p>
     </div>
     <footer class="w3-container w3-grey" id="foot">
-        <span onclick="location.href='http://localhost:9090/Donation_webUi/jsp/linkMain.jsp'" class="w3-button w3-grey pull-right w3-text-white">메인으로</span>
+        <span onclick="location.href='./linkMain.jsp'" class="w3-button w3-grey pull-right w3-text-white">메인으로</span>
     </footer>
 
   </div>

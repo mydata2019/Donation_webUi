@@ -1,12 +1,49 @@
 var totalAmt = 5248600;
+var userNm;
+var userId;
 
 $(document).ready(function () {
 	// var url = document.URL;
 	//	parseURL(url);
-	var userId = document.getElementById("userId").value;
+	userId = document.getElementById("userId").value;
+	selectMainInfo(userId);
   viewTotalAmt(totalAmt);
 	drawSocialVenture(userId);
 });
+
+// 사용자 정보
+function selectMainInfo(userId){
+	console.log("userId > "+JSON.stringify(userId));
+
+	$.ajax({
+			url: 'http://'+ip+':8089/history/selectMain',
+			type: 'POST',
+			data: userId,
+			contentType: "application/json; charset=utf-8",
+			dataType: "json",
+			async: false,
+			success: function (data) {
+
+				data = JSON.stringify(data);
+				data = JSON.parse(data);
+
+        //기부내역 명세
+        data["hstResultSpc"].forEach(function (rowSpc, i) {
+          userNm = rowSpc['user_nm'];             //사용자명
+					document.getElementById("userNmSide").innerHTML=userNm;
+
+        }); //end of spc
+
+			},
+			error: function (data){
+				console.log("통신Error OR 없는 고객");
+			}
+		});
+
+		return false;
+
+};
+
 
 //총 기부금액
 function viewTotalAmt(totalAmt){
@@ -68,6 +105,12 @@ function drawSocialVenture() {
   chart.legend.markers.template.height = 10;
   marker.cornerRadius(20,20,20,20);
 }
+
+//페이지 이동
+function layerOpen(id) {
+    console.log("id is "+id);
+    location.href="./"+id+".jsp?userId="+userId;
+};
 
 
 // Toggle between showing and hiding the sidebar, and add overlay effect

@@ -1,4 +1,9 @@
+var userId;
+
 ﻿$(document).ready(function () {
+
+  console.log("present ip is "+ip);
+  userId =  document.getElementById("userId").value;
 
   $("#data-form").submit(function (event) {
 		alert("기부이력 가져오기 실행");
@@ -18,7 +23,7 @@
 	    var data = {USER_ID: user_id, ORG_ID: org_id, REGU_YN: regu_yn,
       USER_NM: user_nm, DON_DT: don_dt, DON_AMT: don_amt, DON_CTT: don_ctt};
 
-	    var url = 'http://localhost:8089/history/insertHistoryText';
+	    var url = 'http://'+ip+':8089/history/insertHistoryText';
 
 	    // POST 로 데이터 보내기
 	    $.ajax({
@@ -36,3 +41,8 @@
 	  });
 
 });
+
+function to_back(){
+  console.log("back");
+  location.href="./linkMain.jsp?userId="+userId;
+}
