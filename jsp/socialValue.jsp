@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jua">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <input type="hidden" id="userId" name="userId" value=${param.userId} />
@@ -26,7 +26,7 @@
 
   <style>
 
-    html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+    html,body,h1,h2,h3,h4,h5 {font-family: "Jua", sans-serif}
 
     .md-background {
       background-color : #5BB4F0;
@@ -43,7 +43,7 @@
     #pntInfo{width:100%; height:auto; font-size: 15px; text-align: center; margin: 10px 0px 8px 0px}
     #totalAamt{width:100%; height:auto;font-size: 30px; text-align: center; margin: -10px 0px 8px 0px; color:#FF0066}
     #chartdiv{margin: -15px 0px 8px 0px;}
-    #pntInfo2{width:100%; height:auto; font-size: 12px; text-align: center; margin: -27px 0px 8px 0px}
+    #pntInfo2{width:100%; height:auto; font-size: 12px; text-align: center; margin: -30px 0px 8px 0px}
     #pntInfo3{width:100%; height:auto; font-size: 12px; text-align: center; margin: -5px 0px 8px 0px}
 
     .navi{position:fixed;height:50px; width:100%; z-index:100;bottom:0px; background-color:#5BB4F0;display:table;}
@@ -58,7 +58,7 @@
   <!-- Top container -->
   <div class="w3-bar w3-top w3-large md-background" style="z-index:4">
     <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" style="background-color:#5BB4F0;" onclick="w3_open();"><i class="fa fa-bars" style="color:#ffffff"></i></button>
-    <span class="w3-bar-item w3-left">사회적 가치 PLUS+</span>
+    <span class="w3-bar-item w3-left" style="margin-left:-10px"><b>사회적 가치 PLUS+</b></span>
     <input type="image" src="../images/don_alert.png" alt="Submit" width="42" height="42" align="right">
   </div>
 
@@ -74,8 +74,12 @@
     <%-- 작성 --%>
     </div>
     <div class="w3-bar-block">
-      <a href="javascript:;" class="w3-bar-item w3-button w3-padding" onclick="layerOpen('linkMain')"><i class="fa fa-users fa-fw"></i>  연동관리</a>
-      <a href="javascript:;" class="w3-bar-item w3-button w3-padding" onclick="layerOpen('myStatistics')"><i class="fa fa-dashboard fa-fw"></i>  My 기부내역 통계</a><hr>
+      <%-- <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sync"></i>  연동관리</a> --%>
+      <%-- <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-dashboard fa-fw"></i>  My 기부내역 통계</a> --%>
+
+      <a href="javascript:;" class="w3-bar-item w3-button w3-padding" onclick="layerOpen('linkMain')"><i class="fa fa-refresh fa-fw"></i>  연동관리</a>
+<%-- <a href="javascript:;" class="w3-bar-item w3-button w3-padding" onclick="layerOpen('myStatistics')"><i class="fa fa-dashboard fa-fw"></i>  My 기부내역 통계</a><hr> --%>
+      <hr>
       <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  설정</a>
       <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  고객센터</a>
     </div>
@@ -89,7 +93,7 @@
   <div class="w3-main" style="margin-left:300px;margin-top:0px;">
 
     <!-- Header -->
-    <header class="w3-container" style="padding-top:10px; background-color:#5BB4F0">
+    <header class="w3-container" style="padding-top:1px; margin-top:-7px; background-color:#5BB4F0">
     </header>
 
     <div class="w3-container w3-padding-16" style="height:80px">
@@ -114,7 +118,7 @@
       <!-- container -->
       <div id="container" style="padding-top:45px; margin-top: 0px">
         <div class="w3-row-padding" style="height:50px; margin-top:-50px">
-          <div class="w3-col s6 w3-button"><img src="../images/img_social1.png" style="width:100%"></div>
+          <div class="w3-col s6 w3-button"><img src="../images/img_social11.png" style="width:100%"></div>
           <div class="w3-col s6 w3-button"><img src="../images/img_social2.png" style="width:100%"></div>
           <%-- <div class="w3-col s4 "><img src="../images/img_social_3.png" style="width:100%"></div> --%>
         </div>
@@ -132,7 +136,7 @@
       <!-- container -->
       <div id="container" style="padding-top:45px; margin-top: 0px">
         <div class="w3-row-padding" style="height:50px; margin-top:-50px">
-          <div class="w3-col s6 w3-button"><img src="../images/img_social3.png" style="width:100%"></div>
+          <div class="w3-col s6 w3-button"><img src="../images/img_social13.png" style="width:100%"></div>
           <div class="w3-col s6 w3-button"><img src="../images/img_social4.png" style="width:100%"></div>
           <%-- <div class="w3-col s4 "><img src="../images/img_social_3.png" style="width:100%"></div> --%>
         </div>
@@ -161,6 +165,9 @@
 
     <!-- Footer -->
     <div class="navi">
+      <%-- <a href="./demo1.jsp" class="myDomain"><span class="blind">MY기부</span></a>
+      <a href="./demo2_1.jsp" class="social"><span class="blind">소셜벤처</span></a>
+      <a href="./demo4_M00030.jsp" class="donation"><span class="blind">기부단체</span></a> --%>
       <a href="javascript:;" class="myDomain" onclick="layerOpen('mainMyDon')"><span class="blind">MY기부</span></a>
       <a href="#" class="social"><span class="blind">사회적가치 PLUS+</span></a>
       <a href="javascript:;" class="donation" onclick="layerOpen('donation')"><span class="blind">기부단체 정보</span></a>
