@@ -1,1 +1,1 @@
-var ip = "175.119.151.248";
+var ip = "localhost";
