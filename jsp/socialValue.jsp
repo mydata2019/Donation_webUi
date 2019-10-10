@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jua">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <input type="hidden" id="userId" name="userId" value=${param.userId} />
@@ -26,7 +26,7 @@
 
   <style>
 
-    html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+    html,body,h1,h2,h3,h4,h5 {font-family: "", sans-serif}
 
     .md-background {
       background-color : #5BB4F0;
@@ -43,13 +43,14 @@
     #pntInfo{width:100%; height:auto; font-size: 15px; text-align: center; margin: 10px 0px 8px 0px}
     #totalAamt{width:100%; height:auto;font-size: 30px; text-align: center; margin: -10px 0px 8px 0px; color:#FF0066}
     #chartdiv{margin: -15px 0px 8px 0px;}
-    #pntInfo2{width:100%; height:auto; font-size: 12px; text-align: center; margin: -27px 0px 8px 0px}
+    #pntInfo2{width:100%; height:auto; font-size: 12px; text-align: center; margin: -30px 0px 8px 0px}
     #pntInfo3{width:100%; height:auto; font-size: 12px; text-align: center; margin: -5px 0px 8px 0px}
 
     .navi{position:fixed;height:50px; width:100%; z-index:100;bottom:0px; background-color:#5BB4F0;display:table;}
-    .navi a.myDomain{position:relative;top:0;left:0;width:33%;height:49px;background:url(../images/don_mydon.png) no-repeat;background-size:40px 38px; background-position:center; padding:0px 10px; display:table-cell; }
+    .navi a.myDomain{position:relative;top:0;left:0;width:33%;height:49px;background:url(../images/don_mydon2.png) no-repeat;background-size:40px 38px; background-position:center; padding:0px 10px; display:table-cell; }
+    .navi a.myStatistics{position:relative;top:0;left:0;width:33%;height:49px;background:url(../images/don_mystatistics2.png) no-repeat;background-size:40px 40px; background-position:center; padding:0px 10px; display:table-cell; }
     .navi a.social{position:relative;top:0;left:0;width:33%;height:49px;background:url(../images/don_social.png) no-repeat;background-size:45px 42px; background-position:center; padding:0px 10px; display:table-cell; }
-    .navi a.donation{position:relative;top:0;left:0;width:33%;height:49px;background:url(../images/don_donation.png) no-repeat;background-size:40px 40px; background-position:center; padding:0px 10px; display:table-cell; }
+
 
   </style>
 </head>
@@ -58,7 +59,8 @@
   <!-- Top container -->
   <div class="w3-bar w3-top w3-large md-background" style="z-index:4">
     <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" style="background-color:#5BB4F0;" onclick="w3_open();"><i class="fa fa-bars" style="color:#ffffff"></i></button>
-    <span class="w3-bar-item w3-left">사회적 가치 PLUS+</span>
+    <%-- <span class="w3-bar-item w3-left" style="margin-left:-10px"><b>사회적 가치 PLUS+</b></span> --%>
+    <span class="w3-bar-item w3-button w3-left w3-hover-none w3-hover-text-white" style="margin-left:-10px" onclick="layerOpen('socialValue')"><b>사회적 가치 PLUS+</b></span>
     <input type="image" src="../images/don_alert.png" alt="Submit" width="42" height="42" align="right">
   </div>
 
@@ -74,8 +76,12 @@
     <%-- 작성 --%>
     </div>
     <div class="w3-bar-block">
-      <a href="javascript:;" class="w3-bar-item w3-button w3-padding" onclick="layerOpen('linkMain')"><i class="fa fa-users fa-fw"></i>  연동관리</a>
-      <a href="javascript:;" class="w3-bar-item w3-button w3-padding" onclick="layerOpen('myStatistics')"><i class="fa fa-dashboard fa-fw"></i>  My 기부내역 통계</a><hr>
+      <%-- <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sync"></i>  연동관리</a> --%>
+      <%-- <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-dashboard fa-fw"></i>  My 기부내역 통계</a> --%>
+
+      <a href="javascript:;" class="w3-bar-item w3-button w3-padding" onclick="layerOpen('linkMain')"><i class="fa fa-refresh fa-fw"></i>  연동관리</a>
+<%-- <a href="javascript:;" class="w3-bar-item w3-button w3-padding" onclick="layerOpen('myStatistics')"><i class="fa fa-dashboard fa-fw"></i>  My 기부내역 통계</a><hr> --%>
+      <hr>
       <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  설정</a>
       <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  고객센터</a>
     </div>
@@ -89,10 +95,10 @@
   <div class="w3-main" style="margin-left:300px;margin-top:0px;">
 
     <!-- Header -->
-    <header class="w3-container" style="padding-top:10px; background-color:#5BB4F0">
+    <header class="w3-container" style="padding-top:1px; margin-top:44px;">
     </header>
 
-    <div class="w3-container w3-padding-16" style="height:80px">
+    <div class="w3-container w3-padding-16" style="height:80px; margin-top:-50px;">
       <p id="pntInfo">2019.10월 적립 기부금 </p>
       <p id="totalAamt">0</p>
     </div>
@@ -161,9 +167,14 @@
 
     <!-- Footer -->
     <div class="navi">
-      <a href="javascript:;" class="myDomain" onclick="layerOpen('mainMyDon')"><span class="blind">MY기부</span></a>
-      <a href="#" class="social"><span class="blind">사회적가치 PLUS+</span></a>
-      <a href="javascript:;" class="donation" onclick="layerOpen('donation')"><span class="blind">기부단체 정보</span></a>
+      <%-- <a href="./demo1.jsp" class="myDomain"><span class="blind">MY기부</span></a>
+      <a href="./demo2_1.jsp" class="social"><span class="blind">소셜벤처</span></a>
+      <a href="./demo4_M00030.jsp" class="donation"><span class="blind">기부단체</span></a> --%>
+      <a href="javascript:;" class="myDomain w3-button w3-hover-blue" onclick="layerOpen('mainMyDon')"><span class="blind">MY기부</span></a>
+      <a href="javascript:;" class="myStatistics w3-button w3-hover-blue" onclick="layerOpen('myStatistics')"><span class="blind">MY기부내역통계</span></a>
+      <a href="#" class="social w3-button w3-hover-blue"><span class="blind">사회적가치 PLUS+</span></a>
+
+      <%-- <a href="javascript:;" class="donation" onclick="layerOpen('donation')"><span class="blind">기부단체 정보</span></a> --%>
     </div>
 
 

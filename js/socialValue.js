@@ -9,6 +9,9 @@ $(document).ready(function () {
 	selectMainInfo(userId);
   viewTotalAmt(totalAmt);
 	drawSocialVenture(userId);
+
+	//사용자명 맵핑
+	document.getElementById("userNmSide").innerHTML=userNm;
 });
 
 // 사용자 정보
@@ -42,6 +45,12 @@ function selectMainInfo(userId){
 
 		return false;
 
+};
+
+//페이지 이동
+function layerOpen(id) {
+    console.log("id is "+id);
+    location.href="./"+id+".jsp?userId="+userId;
 };
 
 

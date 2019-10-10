@@ -45,6 +45,13 @@
     float: left;
     padding-bottom: 5px;
   }
+  .agimg {
+    width: 25px;
+    margin-right: 10px;
+  }
+  .detail p {
+    font-size: small;
+  }
 
   </style>
 </head>
@@ -91,7 +98,6 @@
           <input type="submit" class="w3-btn w3-bar-item w3-text-white"
             style="float:right;width:50%;padding-top:15px;padding-bottom:15px;margin-top:0px;background-color: #008fff; font-weight:bold;"
              value="로그인"/>
-
         </div>
       </div>
     </div>
@@ -110,17 +116,63 @@
     </header>
 
     <div class="w3-container">
-      <p><b>인증이 완료되었습니다.</b></p>
+      <p><b>단체 로그인에 성공했습니다.</b></p>
       <p>- 기부단체 : 유니세프</p>
       <p>- ID : cyh602</p>
       <p> </p>
       <p><b>기부이력을 가져오시겠습니까?</b></p>
     </div>
 
+    <footer class="w3-container w3-grey">
+
+        <span class="w3-button w3-grey pull-right w3-text-white" onclick="document.getElementById('id03').style.display='none'">가져오기</span>
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-grey pull-right w3-text-white">취소</span>
+
+    </footer>
+
+  </div>
+</div>
+<div id="id03" class="w3-modal">
+  <div class="w3-modal-content">
+
+    <header class="w3-container w3-grey">
+      <span onclick="document.getElementById('id03').style.display='none'"
+      class="w3-button w3-display-topright w3-text-white">X</span>
+      <h3 class="w3-text-white">정보 제공 동의</h3>
+    </header>
+
+    <div class="w3-container">
+      <p style="font-size:13pt;"><b>기부단체의 정보 제공 동의</b></p>
+      <p>'유니세프'의 상세 기부 내역을 '기부니조아'에 제공하는 것을 동의하십니까?</p>
+      <p></p>
+      <p style="text-align:right;height:20px;"><input type="button" class="pull-right w3-light-grey w3-btn w3-small w3-round-large" value="제공상세"></p>
+      <p class="pull-right">
+        <span><input type="radio" class="w3-radio" name="agree" value="1" checked/><label> 동의</label></span>
+        <span><input type="radio" class="w3-radio" name="agree" value="0"/><label> 동의 안함</label></span>
+      </p>
+
+    </div>
+    <div class="w3-container w3-pale-yellow w3-topbar w3-border-grey detail">
+      <p>
+        <span style="font-size:13pt;"> <b> 정보 제공 </b></span>
+      </p>
+      <p>
+        <img src="../images/shipping.png"/ class="agimg">
+        <b>상세 기부내역 4종(일자, 금액, 종류, 결재정보)</b>이 <b>'기부니조아'</b>에 제공됩니다.</p>
+      <p>
+        <img src="../images/good.png"/ class="agimg">
+          기부포인트를 적립 받아서 사용할 수 있어요. 통계정보를 볼 수 있어요.
+      </p>
+      <p>
+        <img src="../images/bad.png"/ class="agimg">
+        타기부단체로부터 상담전화를 받을 수 있어요.
+      </p>
+
+    </div>
+
     <footer class="w3-container w3-grey" id="foot">
 
-        <span class="w3-button w3-grey pull-right w3-text-white" id="getDon">가져오기</span>
-        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-grey pull-right w3-text-white">취소</span>
+        <span class="w3-button w3-grey pull-right w3-text-white" id="getDon">결과 제출</span>
 
     </footer>
 

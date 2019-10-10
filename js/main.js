@@ -95,13 +95,13 @@ function selectMainInfo(userId){
           $('#container .chargeList ').append('\
               <li>\
                 <a href="javascript:;" style="text-decoration:none">'+orgNm+'\
-                <span class="w3-right" style="color:#646464; padding-right:30px">'+subtotalAmt+'원</span>\
+                <span class="w3-right" style="color:#646464; padding-right:30px;">'+subtotalAmt+'원</span>\
                 </a>\
                 <ul class="dataList">'+liStr+'</ul>\
               </li>');
 
         }); //end of spc
-
+3
         //총 기부금액
         viewTotalAmt(totalAmt);
 
@@ -126,5 +126,22 @@ function viewTotalAmt(totalAmt){
       numberStep: comma_separator_number_step
     },  1000
   );
+
+};
+
+function downloadHst() {
+  console.log('downloadHst');
+  downloadInnerHtml('#container', true, 'mydonationhistory', 'application/csv', '.csv');
+};
+
+// csv/txt 다운로드
+function downloadInnerHtml(elementid, htmllinereplace, filename, mimeType, extension) {
+
+  var elHtml = $(elementid).html();
+  if (htmllinereplace) elHtml = elHtml.replace(/\<br\>/gi,'\n');
+  var link = document.createElement('a');
+  link.setAttribute('download', filename + extension);
+  link.setAttribute('href', 'data:' + mimeType  +  ';charset=utf-8,' + encodeURIComponent(elHtml));
+  link.click();
 
 };
