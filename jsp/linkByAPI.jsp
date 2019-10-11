@@ -62,7 +62,7 @@
 <!-- Top container -->
 <div class="w3-bar w3-top w3-large md-background2" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none" onclick="layerOpen('linkMain');"><i class="fa fa-arrow-left"></i></button>
-  <span class="w3-bar-item w3-left">기부단체 연동 로그인</span>
+  <span class="w3-bar-item w3-left" style="margin-left:-10px"><b>기부단체 연동 로그인</b></span>
 </div>
 
 
@@ -93,11 +93,11 @@
           <input type="hidden" name="user_id" value="1">
           <input type="hidden" name="org_id" value="2">
           <input type="button" class="w3-btn w3-bar-item w3-border-right w3-text-white"
-            style="width:50%;padding-top:15px;padding-bottom:15px;margin-top:0px;background-color: #6bbcfd; font-weight:bold;"
+            style="width:50%;padding-top:15px;padding-bottom:15px;margin-top:0px;background-color: #C0C0C0; font-weight:bold;"
             value="취소하기"
             onclick="location.href='./linkMain.jsp'">
           <input type="submit" class="w3-btn w3-bar-item w3-text-white"
-            style="float:right;width:50%;padding-top:15px;padding-bottom:15px;margin-top:0px;background-color: #008fff; font-weight:bold;"
+            style="float:right;width:50%;padding-top:15px;padding-bottom:15px;margin-top:0px;background-color: #5BB4F0; font-weight:bold;"
              value="로그인"/>
         </div>
       </div>

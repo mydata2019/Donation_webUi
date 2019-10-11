@@ -93,7 +93,7 @@ function drawSocialVenture() {
   var series = chart.series.push(new am4charts.PictorialStackedSeries());
   series.dataFields.value = "value";
   series.dataFields.category = "name";
-  series.alignLabels = true;
+  series.alignLabels = false;
   // this makes only A label to be visible
   series.labels.template.propertyFields.disabled = "disabled";
   series.ticks.template.propertyFields.disabled = "disabled";
