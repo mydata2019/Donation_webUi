@@ -31,7 +31,7 @@
 		}
 
 		.icon {
-  		padding: 10px;
+  		padding: 15px;
   		background: #d9d9d9;
   		color: #5BB4F0;
   		min-width: 50px;
