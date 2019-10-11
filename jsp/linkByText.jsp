@@ -107,8 +107,33 @@
 
     </div>
   </form>
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-animate-opacity">
+
+      <header class="w3-container w3-grey">
+        <span onclick="layerOpen('linkMain');"
+        class="w3-button w3-display-topright w3-text-white">X</span>
+        <h3 class="w3-text-white">등록 요청 완료</h3>
+      </header>
+
+      <div class="w3-container">
+        <p><b>기부데이터가 입력 되었습니다.</b></p>
+        <p>입력하신 데이터에 대한 검증이 진행됩니다.</p>
+        <p>검증 완료 시, 포인트는 익일 야간에 적립됩니다.</p>
+      </div>
+
+      <footer class="w3-container w3-grey">
+
+          <span class="w3-button w3-grey pull-right w3-text-white" onclick="layerOpen('linkMain');">메인으로</span>
+
+      </footer>
+
+    </div>
+  </div>
   <!-- End page content -->
 </div>
+
+
 
 </body>
 </html>
