@@ -67,6 +67,7 @@ function selectStatistics(userId){
 			data = JSON.parse(data);
 			console.log("data > " + data.totalAmt);
       drawStatistics(data);
+      drawTaxStatistics(data);
 
 		},
 		error: function (data){
@@ -235,6 +236,65 @@ function drawStatistics(result){
 	// }];
 
 }
+
+function drawTaxStatistics(result){
+
+	var totalAmt = result.totalAmt / 10000;
+  var taxFavor = result.totalAmt * 15 /100 /10000;
+  var taxFavorR = AddComma(result.totalAmt * 15 /100);
+  $('#taxFavordiv').append(taxFavorR);
+
+  // Themes begin
+  am4core.useTheme(am4themes_animated);
+  // Themes end
+
+   // Create chart instance
+  var chart = am4core.create("barChartdiv", am4charts.XYChart);
+
+  chart.data = [
+    {
+      "region": "B",
+      "category": "세제혜택",
+      "totalAmt": taxFavor
+    },
+    {
+      "region": "A",
+      "category": "기부금액",
+      "totalAmt": totalAmt
+    }
+  ];
+
+  // Create axes
+  var yAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+  yAxis.dataFields.category = "category";
+  yAxis.renderer.grid.template.location = 0;
+  yAxis.renderer.labels.template.fontSize = 10;
+  yAxis.renderer.minGridDistance = 10;
+
+  var xAxis = chart.xAxes.push(new am4charts.ValueAxis());
+
+  // Create series
+  var series = chart.series.push(new am4charts.ColumnSeries());
+  series.dataFields.valueX = "totalAmt";
+  series.dataFields.categoryY = "category";
+  series.columns.template.tooltipText = "{categoryY}: [bold]{valueX}[/]";
+  series.columns.template.strokeWidth = 0;
+  series.columns.template.adapter.add("fill", function(fill, target) {
+    if (target.dataItem) {
+      switch(target.dataItem.dataContext.region) {
+        case "A":
+          return chart.colors.getIndex(0);
+          break;
+        case "B":
+          return chart.colors.getIndex(1);
+          break;
+      }
+    }
+    return fill;
+  });
+
+}
+
 
 function AddComma(num)
 {

@@ -68,7 +68,10 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";
 }
 
-
+function download(n) {
+	 var url = "../images/report_"+n+".pdf";
+	 location.href=url;
+}
 
 // Toggle between showing and hiding the sidebar, and add overlay effect
 function w3_open() {

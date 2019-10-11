@@ -99,7 +99,7 @@
 
     <hr>
     <!-- Header -->
-    <header class="w3-container" style="padding-top:10px">
+    <header class="w3-container" style="padding-top:0px">
       <h6 style="color:#646464; font-size: 16px;"><b> 월별 기부내역</b></h6>
       <%-- <hr> --%>
     </header>
@@ -107,11 +107,19 @@
     <hr>
     <!-- Header -->
     <header class="w3-container">
-      <h6 style="color:#646464; font-size: 16px;"><b> 분야별 기부내역 (원)</b></h6>
+      <h6 style="color:#646464; font-size: 16px;"><b> 분야별 기부내역 (만원)</b></h6>
       <%-- <hr> --%>
     </header>
     <div id="pieChartdiv"></div>
+    <hr>
 
+    <!-- Header -->
+    <header class="w3-container">
+      <h6 style="color:#646464; font-size: 16px;"><b> 기부금 세제혜택 </b></h6>
+      <%-- <hr> --%>
+    </header>
+    <div style="margin-left:20px"> 기부로 인한 세제혜택은 <b><span id="taxFavordiv" style="color:red"></b> </span> 원</span> 입니다.</div>
+    <div id="barChartdiv" style="height: 130px; margin:  0px 10px 0px -5px"></div>
 
     <!-- Footer -->
     <div class="navi">

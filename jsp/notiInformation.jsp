@@ -105,9 +105,9 @@
     <div class="w3-content w3-display-container" style="margin-top:-34px;">
       <a class="w3-bar-item" style="color:#646464; font-size:16px; margin-left: 17px; padding-left: 0px"><b>MY 기부단체 연차보고서</b></a>
       <div class="w3-content w3-display-container" style ="margin : 0px 0px 0px 0px">
-        <img class="mySlides w3-button w3-hover-none" src="../images/don_report1.png" style="width:100%; height:280px;">
-        <img class="mySlides w3-button w3-hover-none" src="../images/don_report3.png" style="width:100%; height:280px;">
-        <img class="mySlides w3-button w3-hover-none" src="../images/don_report7.png" style="width:100%; height:280px;">
+        <img class="mySlides w3-button w3-hover-none" src="../images/don_report1.png" type="application/pdf" style="width:100%; height:280px;" onClick="download('unicef')">
+        <img class="mySlides w3-button w3-hover-none" src="../images/don_report3.png" style="width:100%; height:280px;" onClick="download('good')">
+        <img class="mySlides w3-button w3-hover-none" src="../images/don_report7.png" style="width:100%; height:280px;" onClick="download('greenpeace')" >
 
         <button class="w3-button w3-black w3-display-left w3-hover-white" onclick="plusDivs(-1)">&#10094;</button>
         <button class="w3-button w3-black w3-display-right w3-hover-white" onclick="plusDivs(1)">&#10095;</button>
@@ -128,10 +128,14 @@
           <div class="w3-col s6 w3-button"><img src="../images/don_report9.png" style="width:100%; height:130px"></div>
           <%-- <div class="w3-col s4 "><img src="../images/img_social_3.png" style="width:100%"></div> --%>
         </div><p>
+
         <div style=" margin-top:90px; font-size: 10px;" align="center">　더보기＋　</div>
       </div>
 
     </div>
+
+
+
 
     <!-- Footer -->
     <div class="navi">
@@ -142,7 +146,6 @@
       <a href="javascript:;" class="myStatistics w3-button w3-hover-blue" onclick="layerOpen('myStatistics')"><span class="blind">MY기부내역통계</span></a>
       <a href="#" class="notiInfo w3-button w3-hover-blue"><span class="blind">기부단체 연차보고서</span></a>
       <a href="javascript:;" class="social w3-button w3-hover-blue" onclick="layerOpen('socialValue')"><span class="blind">사회적가치 PLUS+</span></a>
-
 
       <%-- <a href="javascript:;" class="donation" onclick="layerOpen('donation')"><span class="blind">기부단체 정보</span></a> --%>
     </div>

@@ -43,8 +43,8 @@
     #pntInfo{width:100%; height:auto; color:#646464; font-size: 18px; text-align: center; margin: 10px 0px 8px 0px}
     #totalAamt{width:100%; height:auto;font-size: 30px; text-align: center; margin: -10px 0px 8px 0px; color:#FF0066}
     #chartdiv{margin: -15px 0px 8px 0px;}
-    #pntInfo2{width:100%; height:auto; color:#646464; font-size: 12px; text-align: center; margin: -30px 0px 8px 0px}
-    #pntInfo3{width:100%; height:auto; color:#646464; font-size: 12px; text-align: center; margin: -5px 0px 8px 0px}
+    #pntInfo2{width:100%; height:auto; color:#646464; font-size: 13px; text-align: center; margin: -32px 0px 8px 0px}
+    #pntInfo3{width:100%; height:auto; color:#646464; font-size: 13px; text-align: center; margin: -5px 0px 8px 0px}
 
     .navi{position:fixed;height:50px; width:100%; z-index:100;bottom:0px; background-color:#5BB4F0;display:table;}
     .navi a.myDomain{position:relative;top:0;left:0;width:25%;height:49px;background:url(../images/don_mydon2.png) no-repeat;background-size:47px 45px; background-position:center; padding:0px 10px; display:table-cell; }
@@ -100,15 +100,16 @@
     </header>
 
     <div class="w3-container w3-padding-16" style="height:80px; margin-top:-50px;">
-      <p id="pntInfo"><b>2019.10월 적립 기부금 </b></p>
+      <p id="pntInfo"><b>"수아야! 학교가자!" </b></p>
       <p id="totalAamt">0</p>
     </div>
     <div class="w3-container w3-padding-16" style="height:140px">
       <div id="chartdiv"></div>
+      <img src="../images/baby.png" style="width:auto; height:180px; margin: -335px 0px 0px 218px">
     </div>
     <div class="w3-container w3-padding-16" style="height:30px">
       <p id="pntInfo2">사회적가치 활동으로 또 다른 가치를 더해보세요.</p>
-      <p id="pntInfo3">이 달에 적립된 기부금은 '독거노인'들을 위해 기부됩니다.</p>
+      <p id="pntInfo3">이 달에 적립된 기부금은 <b>'수아'</b>를 위해 기부됩니다.</p>
     </div>
     <hr>
 
