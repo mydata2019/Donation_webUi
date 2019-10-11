@@ -29,8 +29,8 @@
     color : #424242;
   }
   .logo {
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     margin-right:15px;
   }
   .plusminus {
@@ -40,7 +40,6 @@
     width: 100%;
     height: 500px;
   }
-
   #org div {
     height: 50px;
   }
@@ -50,15 +49,34 @@
   .row-right {
     padding-top:5px;
   }
-
+  .pull-right {
+    font-size: 9pt;
+  }
   .pull-right img {
     margin-right:5px;
+  }
+  .pull-right .w3-btn {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+  }
+  .pull-left {
+    font-weight: bold;
+    font-size : 11pt;
   }
 
   .top-row {
     margin-top: 10px;
     margin-bottom: 10px;
   }
+  #org .w3-left-align span {
+    padding-top:1px;
+  }
+  #ref {
+    padding-left:0px;
+    padding-right:0px;
+  }
+
   </style>
 </head>
 
@@ -77,14 +95,22 @@
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
   <div class="w3-container w3-border w3-large w3-light-grey">
-    <div class="w3-left-align" style="font-size:16px;"><p>기관별 기부내역(상세) 연동</p></div>
+    <div class="w3-left-align" style="font-size:16px;">
+      <p>기관별 기부내역(상세) 연동
+        <span class="w3-btn pull-right w3-border w3-border-grey w3-small w3-grey w3-text-white w3-round"
+          style="padding-left:5px; padding-top:5px; padding-bottom:5px; padding-right:5px;"
+          onclick="location.href='./linkDetail.jsp'">연동이력</span>
+      </p>
+    </div>
   </div>
-  <div class="w3-container w3-white" id="org" style="padding-top:10px;padding-bottom:20px;">
+  <div class="w3-container w3-white" id="org" style="padding-top:10px;padding-bottom:0px;">
     <div class="w3-left-align top-row">
       <span class="row-left pull-left">
         <img src="../images/org1.png" class="logo"/>국경없는 의사회
       </span>
       <span class="row-right pull-right">
+        <button class="w3-btn w3-round" id="ref" style="padding-right:5px;">
+          <img src="../images/refresh.png" class="plusminus"/> </button>
         <button class="w3-btn w3-round pull-right" id="callAPI">
           <img src="../images/remove.png" class="plusminus"/>연동끊기</button>
       </span>
@@ -103,6 +129,8 @@
         <img src="../images/org3.png"/ class="logo"/>세이브더칠드런
       </span>
       <span class="row-right pull-right">
+        <button class="w3-btn w3-round" id="ref" style="padding-right:5px;">
+          <img src="../images/refresh.png" class="plusminus"/> </button>
         <button class="w3-btn w3-round pull-right" id="callAPI">
           <img src="../images/remove.png" class="plusminus"/>연동끊기</button>
       </span>
@@ -112,6 +140,8 @@
         <img src="../images/org4.jpg" class="logo"/>그린피스
       </span>
       <span class="row-right pull-right">
+        <button class="w3-btn w3-round" id="ref" style="padding-right:5px;">
+          <img src="../images/refresh.png" class="plusminus"/> </button>
         <button class="w3-btn w3-round pull-right" id="callAPI">
           <img src="../images/remove.png" class="plusminus"/>연동끊기</button>
       </span>
@@ -121,8 +151,8 @@
     <div class="w3-left-align" style="font-size:16px;"><p>기부이력 직접 등록</p></div>
   </div>
   <div class="w3-container w3-white top-row" style="padding-top:10px;">
-    <div class="w3-left-align pull-left" style="padding-top:10px;">
-      <span class="w3-padding-large">직접 등록하기</span>
+    <div class="w3-left-align pull-left" style="padding-left:15px;">
+      <span class="">직접 등록하기</span>
     </div>
     <div class="pull-right">
       <button class="w3-btn w3-white w3-round w3-right-align" href="javascript:;" id="callText" onclick="layerOpen('linkByText')">

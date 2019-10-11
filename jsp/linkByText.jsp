@@ -19,6 +19,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="../js/ip_config.js"></script>
   <script type="text/javascript" src="../js/linkByText.js"></script>
+  <script type="text/javascript" src="../js/linkMain.js"></script>
 
   <style>
 
@@ -44,7 +45,7 @@
 
 <!-- Top container -->
 <div class="w3-bar w3-top w3-large md-background2" style="z-index:4">
-  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none" onclick="to_back();"><i class="fa fa-arrow-left"></i></button>
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none" onclick="layerOpen('linkMain');"><i class="fa fa-arrow-left"></i></button>
   <span class="w3-bar-item w3-left" style="margin-left:-10px"><b>기부내역 등록하기</b></span>
 </div>
 
