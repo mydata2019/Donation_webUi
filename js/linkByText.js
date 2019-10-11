@@ -6,7 +6,6 @@ var userId;
   userId =  document.getElementById("userId").value;
 
   $("#data-form").submit(function (event) {
-		alert("기부이력 가져오기 실행");
 	    // 폼 기본 제출 막기
 	    event.preventDefault();
 
@@ -31,10 +30,10 @@ var userId;
 	      type: 'POST',
 	      data: JSON.stringify(data),
 	      contentType: "application/json; charset=utf-8",
-	      dataType: "json",
+	      dataType: "text",
 	      async: false,
 	      success: function (result) {
-	          alert('성공여부 : ' + result.result);
+            document.getElementById('id01').style.display='block';
 	      }
 	    });
 
