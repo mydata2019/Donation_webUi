@@ -23,19 +23,19 @@ var userId;
       USER_NM: user_nm, DON_DT: don_dt, DON_AMT: don_amt, DON_CTT: don_ctt};
 
 	    var url = 'http://'+ip+':8089/history/insertHistoryText';
-
-	    // POST 로 데이터 보내기
-	    $.ajax({
-	      url: url,
-	      type: 'POST',
-	      data: JSON.stringify(data),
-	      contentType: "application/json; charset=utf-8",
-	      dataType: "text",
-	      async: false,
-	      success: function (result) {
-            document.getElementById('id01').style.display='block';
-	      }
-	    });
+      document.getElementById('id01').style.display='block';
+	    // // POST 로 데이터 보내기
+	    // $.ajax({
+	    //   url: url,
+	    //   type: 'POST',
+	    //   data: JSON.stringify(data),
+	    //   contentType: "application/json; charset=utf-8",
+	    //   dataType: "text",
+	    //   async: false,
+	    //   success: function (result) {
+      //       document.getElementById('id01').style.display='block';
+	    //   }
+	    // });
 
 	  });
 
