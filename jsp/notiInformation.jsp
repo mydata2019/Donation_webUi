@@ -105,7 +105,7 @@
     <div class="w3-content w3-display-container" style="margin-top:-34px;">
       <a class="w3-bar-item" style="color:#646464; font-size:16px; margin-left: 17px; padding-left: 0px"><b>MY 기부단체 연차보고서</b></a>
       <div class="w3-content w3-display-container" style ="margin : 0px 0px 0px 0px">
-        <img class="mySlides w3-button w3-hover-none" src="../images/don_report1.png" type="application/pdf" style="width:100%; height:280px;" onClick="download('unicef')">
+        <img class="mySlides w3-button w3-hover-none" src="../images/don_report1.png" style="width:100%; height:280px;" onClick="download('unicef')">
         <img class="mySlides w3-button w3-hover-none" src="../images/don_report3.png" style="width:100%; height:280px;" onClick="download('good')">
         <img class="mySlides w3-button w3-hover-none" src="../images/don_report7.png" style="width:100%; height:280px;" onClick="download('greenpeace')" >
 

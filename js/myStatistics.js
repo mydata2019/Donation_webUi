@@ -95,7 +95,8 @@ function drawStatistics(result){
 	// am4core.ready(function() {
 
 	//totalAmt
-	var nData = AddComma(result.totalAmt);
+	// var nData = AddComma(result.totalAmt);
+	var nData = AddComma(577000);
 	$('#totalAmtdiv').append(nData);
 
 	// Themes begin
@@ -106,24 +107,45 @@ function drawStatistics(result){
 	var columnChart = am4core.create("columnChartdiv", am4charts.XYChart);
 
 	// Add data
-	columnChart.data = result.colRslt;
-	// [ {
-	//   "month": "1",
-	//   "A": result.colRslt[0].donAmt,
-	//   "노인": 2.5,
-	//   "기업": 2.1,
-	//   "정치": 1.2,
-	//   "종교": 0.2,
-	//   "기타": 0.1
-	// },{
-	//   "month": "2",
-	//   "A": 2.5,
-	//   "노인": 2.5,
-	//
-	//   "정치": 1.2,
-	//   "종교": 0.2,
-	//   "기타": 0.1
-	// } ];
+	// columnChart.data = result.colRslt;
+	columnChart.data =
+	[ {
+	  "don_month": 01,
+	  "org_category_nm0": 2,
+	  "org_category_nm1": 7.5
+	},{
+    "don_month": 02,
+	  "org_category_nm0": 2
+	},{
+	  "don_month": 03,
+	  "org_category_nm0": 2
+	},{
+	  "don_month": 04,
+	  "org_category_nm0": 2,
+	  "org_category_nm4": 3
+	},{
+	  "don_month": 05,
+	  "org_category_nm0": 2,
+	  "org_category_nm3": 5
+	},{
+	  "don_month": 06,
+	  "org_category_nm0": 3
+	},{
+	  "don_month": 07,
+	  "org_category_nm0": 2,
+	  "org_category_nm3": 2.5
+	},{
+	  "don_month": 08,
+	  "org_category_nm0": 2,
+	  "org_category_nm3": 9
+	},{
+	  "don_month": 09,
+	  "org_category_nm0": 2,
+	  "org_category_nm1": 10
+	},{
+	  "don_month": 10,
+	  "org_category_nm0": 1.7
+	} ];
 
 	// Create axes
 	var categoryAxis = columnChart.xAxes.push(new am4charts.CategoryAxis());
@@ -149,16 +171,17 @@ function drawStatistics(result){
 	  series.columns.template.width = am4core.percent(95);
 	}
 
-	for(var index in result.catRslt){
-	  createSeries("org_category_nm"+index, result.catRslt[index].org_category_nm, true);
-	  console.log(index, "org_category_nm"+index, result.catRslt[index].org_category_nm);
-	}
+	// for(var index in result.catRslt){
+	//   createSeries("org_category_nm"+index, result.catRslt[index].org_category_nm, true);
+	//   console.log(index, "org_category_nm"+index, result.catRslt[index].org_category_nm);
+	// }
 
-	// createSeries("org_category_nm1", result.catRslt[0].org_category_nm, true);
-	// createSeries("org_category_nm2", result.catRslt[1].org_category_nm, true);
-	// createSeries("org_category_nm3", result.catRslt[2].org_category_nm, true);
-	// createSeries("org_category_nm4", result.catRslt[3].org_category_nm, true);
-	// createSeries("org_category_nm5", result.catRslt[4].org_category_nm, true);
+	createSeries("org_category_nm0", "해외구호", true);
+	createSeries("org_category_nm1", "사회복지", true);
+	createSeries("org_category_nm2", "인권", true);
+	createSeries("org_category_nm3", "정치", true);
+	createSeries("org_category_nm4", "환경", true);
+	// createSeries("org_category_nm5", "환경", true);
 	// createSeries("org_category_nm6", result.catRslt[5].org_category_nm, true);
 
 	// Add legend
@@ -213,35 +236,32 @@ function drawStatistics(result){
 	pieChart.legend = new am4charts.Legend();
 
 
-	pieChart.data = result.pieRslt;
+	// pieChart.data = result.pieRslt;
 
-	// pieChart.data = [{
-	//   "category": pieCategory,
-	//   "money": donAmt
-	// },{
-	//   "category": "노인",
-	//   "money": 300000
-	// }, {
-	//   "category": "기업",
-	//   "money": 200000
-	// }, {
-	//   "category": "정치",
-	//   "money": 100000
-	// }, {
-	//   "category": "종교",
-	//   "money": 100000
-	// }, {
-	//   "category": "기타",
-	//   "money": 150000
-	// }];
+	pieChart.data = [{
+	  "don_amt": 20.70000,
+	  "org_category_nm": "해외구호"
+	},{
+    "don_amt": 17.5000,
+	  "org_category_nm": "사회복지"
+	}, {
+    "don_amt": 9.0000,
+	  "org_category_nm": "인권"
+	}, {
+    "don_amt": 7.5000,
+	  "org_category_nm": "정치"
+	}, {
+    "don_amt": 3.0000,
+	  "org_category_nm": "환경"
+	}];
 
 }
 
 function drawTaxStatistics(result){
 
-	var totalAmt = result.totalAmt / 10000;
-  var taxFavor = result.totalAmt * 15 /100 /10000;
-  var taxFavorR = AddComma(result.totalAmt * 15 /100);
+	var totalAmt = 577000 / 10000;
+  var taxFavor = 577000 * 15 /100 /10000;
+  var taxFavorR = AddComma(577000 * 15 /100);
   $('#taxFavordiv').append(taxFavorR);
 
   // Themes begin
