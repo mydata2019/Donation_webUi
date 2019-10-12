@@ -87,11 +87,12 @@
 			$("#userLoginId").val(userLoginId);
 			$("#userPassword").val(userPassword);
 
-			document.getElementById("try").action = "http://"+ip+":8087/user/confirm";
-			document.getElementById("try").submit();
+//			document.getElementById("try").action = "http://"+ip+":8087/user/confirm";
+//			document.getElementById("try").submit();
+				console.log("sign");
+				location.href="./mainMyDon.jsp?userId=1";
 
-		return false;
-		}
+	};
 
   </script>
 </head>
@@ -120,7 +121,7 @@
   	<div class="input-container">
     	<input type="hidden" id="userLoginId" name="userLoginId" value="" >
     	<input type="hidden" id="userPassword" name="userPassword" value="" >
-    	<input type ="submit" value ="로그인" class="btn" onclick="signIn()" >
+    	<input type ="button" value ="로그인" class="btn" onclick="signIn()" >
   	</div>
   </form>
 

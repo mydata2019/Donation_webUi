@@ -1,5 +1,5 @@
 
-var userId;
+var userId=1;
 var pntbamt;
 var userNm;
 var totalAmt = 0;
@@ -10,7 +10,7 @@ $(document).ready(function(){
 
   console.log("present ip is "+ip);
 
-  userId =  document.getElementById("userId").value;
+  //userId =  document.getElementById("userId").value;
 
   if(userId != null){
 
@@ -18,8 +18,8 @@ $(document).ready(function(){
     selectMainInfo(userId);
 
     //사용자명 맵핑
-    document.getElementById("userNm").innerHTML=userNm;
-    document.getElementById("userNmSide").innerHTML=userNm;
+    document.getElementById("userNm").innerHTML="테스트";
+    document.getElementById("userNmSide").innerHTML="테스트";
   }
 
 });
@@ -34,7 +34,14 @@ function layerOpen(id) {
 //기부내역 & 포인트 잔액 조회
 function selectMainInfo(userId){
 	console.log("userId > "+JSON.stringify(userId));
+  //기부포인트
+  pntBamt = "5,770"; //data.pntBamt;
+  document.getElementById("pntBamt").innerHTML=pntBamt;
 
+  //총 기부금액
+  viewTotalAmt(577000);
+
+  /*
 	$.ajax({
 			url: 'http://'+ip+':8089/history/selectMain',
 			type: 'POST',
@@ -50,10 +57,11 @@ function selectMainInfo(userId){
         console.log("pnt bamt > "+data.pntBamt);
 
         //기부포인트
-        pntBamt = data.pntBamt;
+        pntBamt = "5,700"; //data.pntBamt;
         document.getElementById("pntBamt").innerHTML=pntBamt;
 
         //기부내역 명세
+
         data["hstResultSpc"].forEach(function (rowSpc, i) {
 
           var orgId = rowSpc['org_id'];
@@ -108,16 +116,17 @@ function selectMainInfo(userId){
         }); //end of spc
 
         //총 기부금액
-        viewTotalAmt(totalAmt);
+        viewTotalAmt(577000);
 
 			},
 			error: function (data){
 				console.log("통신Error OR 없는 고객");
+
 			}
-		});
+	});
 
 		return false;
-
+*/
 };
 
 //총 기부금액
@@ -137,7 +146,12 @@ function viewTotalAmt(totalAmt){
 //기부내역 다운로드
 function downloadHst() {
 
-		var a = "기부단체, 총 기부금액, 기부일자, 정기후원여부, 상세사유, 기부금액\r\n";
+		var a = "기부단체, 총 기부금액, 기부일자, 정기후원여부, 상세사유, 기부금액\r\n"+
+    "굿네이버스, 570000원, 2019년 05월 01일, 정기후원, 결식아동, 39600\r\n"+
+    "굿네이버스, 570000원, 2019년 06월 01일, 정기후원, 결식아동, 39600\r\n"+
+    "굿네이버스, 570000원, 2019년 07월 01일, 정기후원, 결식아동, 39600\r\n"+
+    "월드비전, 7000원, 2019년 05월 01일, 일시후원, 해외난민, 7000";
+
 		$.each(array, function(i, item){
 			a += item.Donation_Organization + "," + item.Donation_TotalAmt + "," +
            item.Donation_Date + "," + item.Donation_Regular +","+

@@ -1,11 +1,11 @@
-var userNm;
-var userId;
+var userNm="테스트";
+var userId=1;
 
 $(document).ready(function () {
 	// var url = document.URL;
 	//	parseURL(url);
 	// var userId = document.getElementById("userId").value;
-  userId =  document.getElementById("userId").value;
+  //userId =  document.getElementById("userId").value;
   selectMainInfo(userId);
 	selectStatistics(userId);
 
@@ -17,7 +17,7 @@ $(document).ready(function () {
 // 사용자 정보
 function selectMainInfo(userId){
 	console.log("userId > "+JSON.stringify(userId));
-
+/*
 	$.ajax({
 			url: 'http://'+ip+':8089/history/selectMain',
 			type: 'POST',
@@ -42,8 +42,8 @@ function selectMainInfo(userId){
 				console.log("통신Error OR 없는 고객");
 			}
 		});
-
-		return false;
+*/
+		return true;
 
 };
 
@@ -52,9 +52,11 @@ function selectStatistics(userId){
 
 	var userId = userId;
 	console.log("userId "+userId);
+  drawStatistics("");
+  drawTaxStatistics("");
 
 	// var data = userId;
-
+/*
 	$.ajax({
 		url: 'http://'+ip+':8090/statistics/selectStatistics',
 		type: 'POST',
@@ -72,10 +74,10 @@ function selectStatistics(userId){
 		},
 		error: function (data){
 			console.log("통신Error OR 없는 고객");
-			return false;
+			return true;
 		}
 	});
-
+*/
 	return true;
 
 }
